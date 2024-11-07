@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 5%; 
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header nav a {
+    font-weight: 700;
+    color: #161616;
+    transition: all .3s;
+}
+
+header nav a:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo img, .logo span {
+    animation: fromLeft 1.2s;
+}
+
+header nav a:nth-child(1) {
+    animation: fromRight 1.2s;
+}
+header nav a:nth-child(2) {
+    animation: fromRight 1.2s .2s backwards;
+}
+header nav a:nth-child(3) {
+    animation: fromRight 1.2s .4s backwards;
+}
+
+.icon {
+    width: 45px;         /* Tamanho fixo para largura */
+    height: 40px;        /* Tamanho fixo para altura */
+    object-fit: contain; /* Garante que a imagem será ajustada sem distorção */
+}
+
+
+#banner {
+    width: 100%;
+    animation: fromLeft 1.2s .2s backwards;
+}
+
+.promoção {
+    padding: 20px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 5% 70px 5%;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+main ul:nth-child(1) {
+    animation: fromBottom 1.2s .2s backwards;
+}
+main ul:nth-child(2) {
+    animation: fromTop 1.2s .2s backwards;
+}
+main ul:nth-child(3) {
+    animation: fromBottom 1.2s .2s backwards;
+}
+
+main ul li {
+    transition: all .3s;
+}
+main ul li:hover {
+    transform: scale(1.05);
+}
+
+main ul img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+main ul p {
+    font-weight: 700;
+    color: #161616;
+}
+main ul span {
+    color: #a77620;
+}
+
+.container-footer1, .container-footer2 {
+    background: #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 5%;
+}
+
+.container-footer1 a, .newsletter label {
+    font-weight: 700;
+    color: #161616;
+}
+
+.network img {
+    width: 28px;
+}
+
+.credit-card img {
+    width: 40px;
+    margin-left: 15px;
+}
+
+@keyframes fromLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fromRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fromBottom {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fromTop {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media only screen and (max-width: 1000px) {
+    main {
+        flex-direction: column;
+        padding: 30px 0 70px 9%;
+        gap: 30px;
+    }
+    main ul img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    main ul img {
+        width: 90%;
+        height: 90%;
+    }
+}
